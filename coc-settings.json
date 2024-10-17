@@ -1,0 +1,29 @@
+{
+  "languageserver": {
+    "lua": {
+      "command": "lua-language-server",
+      "args": ["-E", "/path/to/lua-language-server/main.lua"],
+      "filetypes": ["lua"],
+      "settings": {
+        "Lua": {
+          "runtime": {
+            "version": "LuaJIT",
+            "path": ["/usr/local/share/lua/5.1"],  // ここは実際の LuaJIT のパスに変更
+          },
+          "diagnostics": {
+            "globals": ["nvim"]
+          },
+          "workspace": {
+            "library": ["~/.config/nvim/"],
+            "checkThirdParty": false
+          },
+          "telemetry": {
+            "enable": false
+          }
+        }
+      }
+    }
+  }
+  vim.cmd[[CocInstall coc-lua]]
+}
+
